@@ -1,0 +1,199 @@
+#% Do not delete the line below; configure depends on this      
+#  \DeclareLaTeXClass[pkuthss]{PKU Thesis}
+#  \DeclareCategory{Books}
+
+Format 66
+
+ClassOptions
+  Other "UTF8,twoside,nopkufont,fontset=windows"
+End
+
+Input book.layout
+Input stdstruct.inc
+
+Preamble
+  \newif\ifblind\blindfalse
+  \newcommand{\makethsstitle}{
+    % 对于 linespread 值的计算过程有兴趣的同学可以参考 pkuthss.cls。
+    \renewcommand*{\bibfont}{\zihao{5}\linespread{1.27}\selectfont}
+    % 按学校要求设定参考文献列表的段间距。
+    \setlength{\bibitemsep}{3bp}
+    \frontmatter
+    \pagestyle{empty}
+    \ifblind\makeblind\else\maketitle\fi
+    \cleardoublepage
+  }
+  \def\copyrightname{版权声明}
+  \newenvironment{copyrightnotice}{
+    \chapter*{\copyrightname}
+    \thispagestyle{empty}
+  }{
+    \cleardoublepage
+  }
+  \newcommand{\abstractmatter}{
+    \pagestyle{plain}
+    % 重置页码计数器，用大写罗马数字排版此部分页码。
+    \setcounter{page}{0}
+    \pagenumbering{Roman}
+  }
+  \newenvironment{eeabstract}{
+    \ifblind\begin{beabstract}\else\begin{eabstract}\fi
+  }{
+    \ifblind\end{beabstract}\else\end{eabstract}\fi
+  }
+EndPreamble
+
+TitleLatexName    makethsstitle
+
+Style Title
+  LatexType       Command
+  LatexName       ctitle
+  InTitle         1
+End
+
+Style Keywords
+  Category        FrontMatter
+  Margin          Dynamic
+  LatexType       Command
+  InTitle         1
+  LatexName       ckeywords
+  LabelType       Static
+  LabelSep        M
+  LabelString     "关键词:"
+  LabelFont
+    Color         textlabel2
+    Series        Bold
+  EndFont
+End
+
+Style "English Keywords"
+  CopyStyle       Keywords
+  LatexName       ekeywords
+  LabelString     "English Keywords:"
+End
+
+Style "English Title"
+  CopyStyle       Keywords
+  LatexType       Command
+  LatexName       etitle
+  LabelString     "English Title:"
+  InTitle         1
+  LabelFont
+    Color         textlabel1
+  EndFont
+End
+
+Style Author
+  LatexType       Command
+  LatexName       cauthor
+  InTitle         1
+End
+
+Style "English Author"
+  CopyStyle       Author
+  LatexName       eauthor
+End
+
+Style "Student ID"
+  CopyStyle       Keywords
+  LatexName       studentid
+  LabelString     "学号:"
+End
+
+Style School
+  CopyStyle       Keywords
+  LatexName       school
+  LabelString     "学院:"
+End
+
+Style Major
+  CopyStyle       Keywords
+  LatexName       cmajor
+  LabelString     "专业:"
+End
+
+Style "English Major"
+  CopyStyle       Keywords
+  LatexName       emajor
+  LabelString     "Major:"
+End
+
+Style Direction
+  CopyStyle       Keywords
+  LatexName       direction
+  LabelString     "研究方向:"
+End
+
+Style Mentor
+  CopyStyle       Keywords
+  LatexName       cmentor
+  LabelString     "导师:"
+End
+
+Style "English Mentor"
+  CopyStyle       Keywords
+  LatexName       ementor
+  LabelString     "Mentor:"
+End
+
+Style Abstract
+  LatexName       cabstract
+  Font
+    Size          Normal
+  End
+  LabelFont
+    Size          Large
+    Series        Bold
+  End
+End
+
+Style "English Abstract"
+  CopyStyle       Abstract
+  LatexName       eeabstract
+  LabelString     "English Abstract"
+End
+
+Style Copyright
+  CopyStyle       Abstract
+  LatexType       Environment
+  LatexName       copyrightnotice
+  LabelString     "版权声明"
+End
+
+Style "Main Matter"
+  Category        Structure
+  LatexType       Command
+  LatexName       mainmatter
+  KeepEmpty       1
+  ResetArgs       1
+  Margin          First_Dynamic
+  NextNoIndent    1
+  ParSkip         0
+  TopSep          2.5
+  BottomSep       0.5
+  ParSep          0
+  Align           Center
+  LabelType       Static
+  LabelBottomSep  0
+  LeftMargin      M
+  LabelString     "--- Main Matter ---"
+
+  Font
+    Family        Sans
+    Series        Bold
+    Size          Largest
+    Color         textlabel1
+  EndFont
+End
+
+Style "Abstract Matter"
+  CopyStyle       "Main Matter"
+  LatexName       abstractmatter
+  LabelString     "--- Abstract Matter ---"
+End
+
+Style "Back Matter"
+  CopyStyle       "Main Matter"
+  LatexName       backmatter
+  LabelString     "--- Back Matter ---"
+End

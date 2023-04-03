@@ -1,0 +1,251 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass pkuthss
+\begin_preamble
+% 如是双盲版论文，将 \blindfalse 改为 \blindtrue。后面可用
+% \ifblind 根据是否双盲来条件地启用代码（参见本文件后面部分）。
+\newif\ifblind\blindfalse
+\end_preamble
+\options fontset=windows
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine biblatex
+\cite_engine_type authoryear
+\biblio_style plain
+\biblio_options backend=biber,utf8,sorting=ecnyt,autocite=superscript
+\biblatex_bibstyle caspervector
+\biblatex_citestyle caspervector
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #718c00
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+测试文档
+\end_layout
+
+\begin_layout English Title
+Test Document
+\end_layout
+
+\begin_layout Author
+某某
+\end_layout
+
+\begin_layout English Author
+Test
+\end_layout
+
+\begin_layout Date
+某年某月
+\end_layout
+
+\begin_layout Student ID
+0123456789
+\end_layout
+
+\begin_layout Major
+某某专业
+\end_layout
+
+\begin_layout English Major
+Some major
+\end_layout
+
+\begin_layout School
+某某学院
+\end_layout
+
+\begin_layout Direction
+某某方向
+\end_layout
+
+\begin_layout Mentor
+某甲教授
+\end_layout
+
+\begin_layout English Mentor
+Prof.
+ Somebody
+\end_layout
+
+\begin_layout Keywords
+其一，
+其二
+\end_layout
+
+\begin_layout English Keywords
+First,
+ Second
+\end_layout
+
+\begin_layout Copyright
+任何收存和保管本论文各种版本的单位和个人，
+ 未经本论文作者同意，
+不得将本论文转借他人，
+ 亦不得随意复制、抄录、拍照或以任何方式传播。
+ 否则，
+引起有碍作者著作权之问题，
+将可能承担法律责任。
+
+\end_layout
+
+\begin_layout Abstract Matter
+
+\end_layout
+
+\begin_layout Abstract
+中文测试文字
+\end_layout
+
+\begin_layout English Abstract
+Test of the English abstract.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Main Matter
+
+\end_layout
+
+\begin_layout Chapter
+引言
+\end_layout
+
+\begin_layout Standard
+测试
+\begin_inset CommandInset citation
+LatexCommand cite
+key "test-en"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+结论和展望
+\end_layout
+
+\begin_layout Standard
+测试
+\begin_inset CommandInset citation
+LatexCommand autocite
+key "test-zh"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "thesis"
+options "caspervector"
+biblatexopts "heading = bibintoc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+附件
+\end_layout
+
+\begin_layout Standard
+随便写点东西
+\end_layout
+
+\begin_layout Back Matter
+
+\end_layout
+
+\begin_layout Chapter
+致谢
+\end_layout
+
+\begin_layout Standard
+感谢 PKU
+\end_layout
+
+\end_body
+\end_document
